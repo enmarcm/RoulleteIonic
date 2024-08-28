@@ -1,0 +1,7 @@
+{
+  "name": "roulette",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
