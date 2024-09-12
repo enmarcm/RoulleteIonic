@@ -1,12 +1,9 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Choise an options </ion-title>
-  </ion-toolbar>
-</ion-header> -->
+
 
 <ion-content [fullscreen]="true">
   <div class="w-full h-screen px-6 py-2">
     <div class="w-full flex-col h-[80%] min-h-[80%] overflow-y-auto gap-2 flex">
+      <h1 class="text-3xl font-bold mb-6 mt-2">Ingrese sus opciones</h1>
       @for(option of options; track $index){
       <ion-input
         [placeholder]="option.value"
@@ -15,6 +12,10 @@
         (ionChange)="updateOption($event, $index)"
         [class]="option?.sts === 'inactive' ? 'border-red-500 border-2' : ''"
       ></ion-input>
+
+      @if(option.sts === 'inactive'){
+      <p class="text-red-500">Debe ingresar una opción</p>
+      }
       }
     </div>
     <div class="w-full flex-col flex h-[20%] justify-end">

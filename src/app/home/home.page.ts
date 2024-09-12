@@ -29,7 +29,7 @@ import { NavController } from '@ionic/angular';
   ],
 })
 export class HomePage {
-  options!: Array<{ value: string; sts?: string }>;
+  options!: Array<{ value: string; sts?: string; modify?:boolean }>;
   parsedInitialValues = INITIAL_VALUES_INPUT.map((item) => item.value);
 
   constructor(private navCtrl: NavController) {
@@ -41,9 +41,12 @@ export class HomePage {
     let foundInactive = false;
   
     DEFAULT_VALUES.forEach((value) => {
+      
       const optionIndex = this.options.findIndex(
         (option) => option.value === value
       );
+      if(this.options[optionIndex]?.modify) return;
+
       if (optionIndex !== -1) {
         this.options[optionIndex] = { value, sts: 'inactive' };
         foundInactive = true;
@@ -62,6 +65,7 @@ export class HomePage {
   updateOption(event: any, index: number) {
     this.options[index].value = event.target.value;
     this.options[index].sts = 'active';
+    this.options[index].modify = true;
   }
 
   goToResults() {
