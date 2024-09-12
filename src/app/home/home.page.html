@@ -1,20 +1,37 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Choise an options </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="w-full h-screen px-6 py-2">
+    <div class="w-full flex-col h-[80%] min-h-[80%] overflow-y-auto gap-2 flex">
+      @for(option of options; track $index){
+      <ion-input
+        [placeholder]="option.value"
+        color="tertiary"
+        fill="outline"
+        (ionChange)="updateOption($event, $index)"
+        [class]="option?.sts === 'inactive' ? 'border-red-500 border-2' : ''"
+      ></ion-input>
+      }
+    </div>
+    <div class="w-full flex-col flex h-[20%] justify-end">
+      <ion-button
+        expand="block"
+        fill="outline"
+        color="primary"
+        (click)="addOption()"
+        >Agregar</ion-button
+      >
+      <ion-button
+        expand="block"
+        fill="solid"
+        color="tertiary"
+        (click)="goToResults()"
+        >Confirmar</ion-button
+      >
+    </div>
   </div>
 </ion-content>

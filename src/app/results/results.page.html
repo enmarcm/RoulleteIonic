@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <h1 class="text-3xl font-semibold">Ruleta</h1>
+    <div class="concursantes">
+      <canvas #canvas id="canvas" width="400" height="400"></canvas>
+      <div class="mark-winner"></div>
+    </div>
+
+    @if(!isSpinning){
+      <ion-button fill="outline" color="primary" class="w-full mt-5" (click)="spin()">Girar</ion-button>
+    }
+
+  </div>
+</ion-content>

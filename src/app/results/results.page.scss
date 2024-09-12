@@ -1,0 +1,56 @@
+.container{
+  padding: 10px;
+  width: 980px;
+  max-width: calc(100% - 20px);
+  margin: auto;
+  margin-top: 50px;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.concursantes{
+  margin-top: 20px;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  text-align: center;
+}
+
+canvas{
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.mark-winner{
+  position: absolute;
+  clip-path: polygon(0 10px, 60px 0, 60px 20px);
+  background-color: red;
+  width: 60px;
+  height: 20px;
+  top: 50%;
+  right: 28%;
+  z-index: 10;
+  box-shadow: 0 0 3px #33333399;
+}
+
+@media(max-width: 768px){
+  .container{
+    width: 100%;
+    padding: 0;
+  }
+  .concursantes{
+    flex-direction: column;
+  }
+  .mark-winner{
+    right: 0;
+  }
+  
+}
