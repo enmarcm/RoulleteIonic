@@ -1,0 +1,15 @@
+<ion-content class="ion-padding">
+  <div class="w-full h-full flex flex-col items-center justify-center">
+    <h1 class="text-white text-4xl font-light">El ganador es: </h1>
+    <div class="min-w-16 h-16 bg-gray-200 rounded-lg my-6 flex flex-col items-center justify-center">
+      <span class="text-4xl text-black font-bold">{{ winner }}</span>
+    </div>
+
+
+    <div class="flex gap-2 flex-col w-full">
+      <ion-button class="w-full" (click)="confirm()" [strong]="true"
+        >Ir a inicio</ion-button
+      >
+    </div>
+  </div>
+</ion-content>

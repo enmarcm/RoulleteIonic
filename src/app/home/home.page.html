@@ -9,6 +9,7 @@
         [placeholder]="option.value"
         color="tertiary"
         fill="outline"
+        [clearInput]="true"
         (ionChange)="updateOption($event, $index)"
         [class]="option?.sts === 'inactive' ? 'border-red-500 border-2' : ''"
       ></ion-input>
